@@ -39,6 +39,28 @@ PORT=8080 pnpm run dev
 | `pnpm run build` | Compile TypeScript to JavaScript |
 | `pnpm run start` | Start production server |
 
+## Benchmarks
+
+Tested with autocannon, 4 cores for gateway + 4 cores for mock backend.
+
+### GET /api/users (300 connections, 30s)
+
+| Metric | Value |
+|--------|-------|
+| Avg Latency | 10.1 ms |
+| Req/Sec | ~28,340 (avg) |
+| Total Requests | 851k |
+| Throughput | 5.55 MB/s |
+
+### POST /api/users (300 connections, 30s, JSON body)
+
+| Metric | Value |
+|--------|-------|
+| Avg Latency | 19.57 ms |
+| Req/Sec | ~14,968 (avg) |
+| Total Requests | 449k |
+| Throughput | 3.91 MB/s |
+
 ## Tech Stack
 
 - [Fastify](https://www.fastify.io/) - Web framework

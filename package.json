@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "test:load": "autocannon http://localhost:3000/api/users -c 100 -d 10",
+    "test:load:json": "autocannon http://localhost:3000/api/users -m POST -H 'Content-Type:application/json' -b '{\"name\":\"test\"}' -c 100 -d 10"
   },
   "keywords": [],
   "author": "",
